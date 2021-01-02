@@ -1,0 +1,27 @@
+name: CaveVision
+version: 1.0
+author: Litz
+main: me.litz.CaveVision.CaveVision
+description: Automatic Nightvision for Caves
+
+commands:
+  CaveVision:
+    usage: /<command>
+    description: Dev info, current verison
+  CaveVision On:
+    usage: /<command>
+    description: Turns CaveVision On
+    aliases: CV On
+  CaveVision Off:
+    usage: /<command>
+    description: Turns CaveVision Off
+    aliases: CV Off
+  CV:
+    usage: /<command>
+    description: Toggles CaveVision
+    aliases: [CaveVision Toggle, CV Toggle]
+
+permissions:
+  CaveVision.use:
+    description: This permissions allows someone to show Dev info and use the plugin
+    default: op
