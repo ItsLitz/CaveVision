@@ -8,9 +8,8 @@ import org.bukkit.entity.Player;
 
 public class CaveVisionCommands implements CommandExecutor {
 
-    public static boolean CaveVisionOnOff = false;
-
     @Override
+
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 
         if (!(sender instanceof Player)) {
@@ -23,7 +22,9 @@ public class CaveVisionCommands implements CommandExecutor {
         if (cmd.getName().equalsIgnoreCase("CaveVision")) {
             sender.sendMessage(ChatColor.AQUA + "[CaveVision] " + ChatColor.YELLOW + "v1.0 " +
                     ChatColor.GRAY + "By " + ChatColor.AQUA + "Litz " +
-                    ChatColor.GRAY + "\n(https://bit.ly/3n2wpVj)");
+                    ChatColor.GRAY + "\n(Spigot: https://bit.ly/3n2wpVj)" +
+                    ChatColor.GRAY + "\n(GitHub: https://bit.ly/2KUhbEI)"
+            );
         }
 
         // On Off for Later Version

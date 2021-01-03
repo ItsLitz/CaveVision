@@ -1,4 +1,5 @@
 package me.litz.CaveVision.events;
+import me.litz.CaveVision.commands.CaveVisionCommands;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

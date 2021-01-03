@@ -7,6 +7,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class CaveVision extends JavaPlugin {
 
+    // public static boolean CaveVisionOnOff = false;
+
     @Override
     public void onEnable() {
         CaveVisionCommands commands = new CaveVisionCommands();
