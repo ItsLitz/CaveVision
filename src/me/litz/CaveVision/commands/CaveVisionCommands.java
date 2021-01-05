@@ -8,6 +8,8 @@ import org.bukkit.entity.Player;
 
 public class CaveVisionCommands implements CommandExecutor {
 
+    public static boolean CaveVisionOnOff = true; // Automatically On
+
     @Override
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -19,25 +21,33 @@ public class CaveVisionCommands implements CommandExecutor {
 
         // Sends Development Information for CaveVision
 
-        if (cmd.getName().equalsIgnoreCase("CaveVision")) {
+        if (cmd.getName().equalsIgnoreCase("CaveVision")
+                && (sender.hasPermission("CaveVision.use"))) {
             sender.sendMessage(ChatColor.AQUA + "[CaveVision] " + ChatColor.YELLOW + "v1.0 " +
                     ChatColor.GRAY + "By " + ChatColor.AQUA + "Litz " +
                     ChatColor.GRAY + "\n(Spigot: https://bit.ly/3n2wpVj)" +
                     ChatColor.GRAY + "\n(GitHub: https://bit.ly/2KUhbEI)"
             );
         }
+        else if (cmd.getName().equalsIgnoreCase("CaveVision")
+                && (!(sender.hasPermission("CaveVision.use")))) {
+            sender.sendMessage(ChatColor.DARK_RED + "You do not have access to that command.");
+        }
 
         // On Off for Later Version
 
-        /* else if (cmd.getName().equalsIgnoreCase("CV") && (CaveVisionOnOff == true)) {
+        else if (cmd.getName().equalsIgnoreCase("CV")
+                && (CaveVisionOnOff == true)
+                && sender.hasPermission("CaveVision.use")) {
                 sender.sendMessage(ChatColor.AQUA + "[CaveVision] " + ChatColor.GREEN + "Enabled");
                 CaveVisionOnOff = false;
-            }
-        else if (cmd.getName().equalsIgnoreCase("CV") && (CaveVisionOnOff == false)) {
+        }
+        else if (cmd.getName().equalsIgnoreCase("CV")
+                && (CaveVisionOnOff == false)
+                && sender.hasPermission("CaveVision.use")) {
             sender.sendMessage(ChatColor.AQUA + "[CaveVision] " + ChatColor.RED + "Disabled");
             CaveVisionOnOff = true;
-        } */
-
+        }
         return true;
     }
 }
